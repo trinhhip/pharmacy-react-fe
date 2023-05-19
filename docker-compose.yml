@@ -1,0 +1,16 @@
+version: '3.6'
+networks:
+  default:
+    name: techlead-net
+    external: true
+
+services:
+  # User Service
+  app-fe:
+    container_name: app-fe
+    build: .
+    restart: always
+    ports:
+      - 8082:3000
+    volumes: 
+      - ./:/app
